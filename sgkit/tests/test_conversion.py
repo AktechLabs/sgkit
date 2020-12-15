@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, List, Tuple
 
 import dask.array as da
 import numpy as np
@@ -52,6 +52,33 @@ def test_convert_probability_to_call(chunks: int, dtype: str) -> None:
                 [[-1, -1], [-1, -1], [-1, -1]],
                 [[-1, -1], [-1, -1], [-1, -1]],
             ],
+            dtype="int8",
+        ),
+    )
+
+
+@pytest.mark.parametrize(
+    "case",
+    [
+        (0, [[0, 0], [0, 0], [0, 0]]),
+        (0.5, [[-1, -1], [0, 0], [0, 0]]),
+        (0.8, [[-1, -1], [-1, -1], [0, 0]]),
+    ],
+)
+def test_convert_probability_to_call__threshold(
+    case: Tuple[int, List[List[int]]]
+) -> None:
+    threshold, expected = case
+    ds = simulate_dataset(
+        [
+            [[0.4, 0.3, 0.3], [0.5, 0.25, 0.25], [0.8, 0.1, 0.1]],
+        ]
+    )
+    ds = convert_probability_to_call(ds, threshold=threshold)
+    np.testing.assert_equal(
+        ds[variables.call_genotype],
+        np.array(
+            [expected],
             dtype="int8",
         ),
     )

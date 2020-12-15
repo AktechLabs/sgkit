@@ -103,6 +103,8 @@ def convert_probability_to_call(
     - `call_genotype_mask` (variants, samples, ploidy): Mask for converted hard calls.
         Defined by :data:`sgkit.variables.call_genotype_mask`.
     """
+    if not (0 <= threshold <= 1):
+        raise ValueError(f"Threshold must be float in [0, 1], not {threshold}.")
     variables.validate(
         ds, {call_genotype_probability: variables.call_genotype_probability_spec}
     )

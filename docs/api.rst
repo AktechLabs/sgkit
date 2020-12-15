@@ -42,6 +42,7 @@ Methods
 .. autosummary::
    :toctree: generated/
 
+   convert_probability_to_call
    count_call_alleles
    count_cohort_alleles
    count_variant_alleles
