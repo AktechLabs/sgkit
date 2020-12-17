@@ -78,7 +78,7 @@ def convert_probability_to_call(
     Parameters
     ----------
     ds
-        Dataset containing genotype probabilities, such as from :func:`sgkit.io.read_bgen`.
+        Dataset containing genotype probabilities, such as from :func:`sgkit.io.bgen.read_bgen`.
     call_genotype_probability
         Genotype probability variable to be converted as defined by
         :data:`sgkit.variables.call_genotype_probability_spec`.
