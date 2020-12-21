@@ -7,6 +7,17 @@ This page provides an auto-generated summary of sgkits's API.
 IO/imports
 ==========
 
+BGEN
+-----
+
+.. currentmodule:: sgkit.io.bgen
+.. autosummary::
+   :toctree: generated/
+
+   bgen_to_zarr
+   read_bgen
+   rechunk_bgen
+
 PLINK
 -----
 

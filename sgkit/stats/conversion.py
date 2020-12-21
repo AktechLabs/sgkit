@@ -98,10 +98,10 @@ def convert_probability_to_call(
     A dataset containing the following variables:
 
     - `call_genotype` (variants, samples, ploidy): Converted hard calls.
-        Defined by :data:`sgkit.variables.call_genotype`.
+        Defined by :data:`sgkit.variables.call_genotype_spec`.
 
     - `call_genotype_mask` (variants, samples, ploidy): Mask for converted hard calls.
-        Defined by :data:`sgkit.variables.call_genotype_mask`.
+        Defined by :data:`sgkit.variables.call_genotype_mask_spec`.
     """
     if not (0 <= threshold <= 1):
         raise ValueError(f"Threshold must be float in [0, 1], not {threshold}.")
