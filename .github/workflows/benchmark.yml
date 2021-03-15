@@ -7,7 +7,7 @@ on:
 
 env:
   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-  BENCHMARKS_REPO: aktech/sgkit-benchmarks-asv
+  BENCHMARKS_REPO: aktechlabs/sgkit-benchmarks-asv
   ASV_CONFIG: benchmarks/asv.conf.json
   MACHINE_NAME: github-actions  # to identify github actions machine as hostname changes everytime
 
